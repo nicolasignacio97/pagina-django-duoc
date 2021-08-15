@@ -1,0 +1,114 @@
+{% load static %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Todo Estetica - Registro </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Oswald|PT+Sans|Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header id="header">
+        <nav class="menu">
+            <div class="logo">
+                <a href="{% url 'inicio:inicio'%}"><img src="/static/img/Header/Logo_Oficial_3.png" alt="Imagen Logo"></a>
+                <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="enlaces" id="enlaces">
+                <a href="#"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Tiendas</a>
+                <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+                <a href="{% url 'inicio:contacto'%}"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <section>
+        <div class=" row registro">
+
+            <section class=" col-xs-12  col-sm-10 col-md-6 redes">
+
+                <div class="InicioRedes">
+                    <p>Inicia Sesión Con Redes Sociales</p>
+                    <a href="javascript:nuevaventana('https://accounts.google.com/signin/v2/identifier?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2FEditPasswd%3Fhl%3Des&followup=https%3A%2F%2Faccounts.google.com%2FEditPasswd%3Fhl%3Des&hl=es&flowName=GlifWebSignIn&flowEntry=ServiceLogin')"><i class="google fa fa-google caja"></i></a>
+                    <a href="javascript:nuevaventana('https://es-la.facebook.com/login/')"><i class="facebook fa fa-facebook caja"></i></a>
+                    <a href="javascript:nuevaventana('https://twitter.com/login?lang=es')"><i class="twitter fa fa-twitter caja"></i></a>
+                </div>
+            </section>
+
+            <div class=" col-xs-12  col-sm-10 col-md-6  formulario">
+
+
+                <h1>¡Registrate y obten beneficios!</h1>
+
+                <input type="text" id="Nombre" name="Nombre" placeholder="Nombre" class="input1">
+                <div id="mensaje1" class="errores">Nombre Obligatorio</div>
+
+
+                <input type="text" id="Apellido" name="Apellido" placeholder="Apellido" class="input1">
+                <div id="mensaje2" class="errores">Apellido Obligatorio</div>
+
+                <input type="text" id="Direccion" name="Direccion" placeholder="Direccion" class="input3"><br>
+                <div id="mensaje3" class="errores">Direccion Obligatoria</div>
+
+                <input type="email" Id="Correo" name="Correo" placeholder="ejemplo@mail.com" class="input3"><br>
+                <div id="mensaje4" class="errores">Correo Obligatorio</div>
+                <div id="mensaje5" class="errores">Formato Invalido</div>
+
+                <input type="password" id="Contraseña" name="Contraseña" placeholder="Contraseña" class="input2">
+                <div id="mensaje6" class="errores">Contraseña Obligatoria</div>
+
+                <input type="password" Id="ConfContra" name="ConfContra" placeholder="Confirmar Contraseña" class="input2"><br>
+                <div id="mensaje7" class="errores">Confirma Contraseña</div>
+
+                <div id="mensaje8" class="errores">La contraseña no coincide</div>
+                <button type="submit" id="enviar">Registrar</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="site-footer seccion ">
+        <div class="contenedor contenedor-footer">
+            <nav class="nav-footer">
+                <a href="#">Tiendas |</a>
+                <a href="#"> Blog |</a>
+                <a href="contacto.html"> Postula aquí</a>
+            </nav>
+
+            <nav>
+                <a href="#">Facebook |</a>
+                <a href="#">Instagram |</a>
+                <a href="#">Twitter</a>
+            </nav>
+            <p>Todos los Derechos Reservados 2019 &copy; </p>
+        </div>
+
+    </footer>
+
+
+    <script src="{% static 'js/headroom.min.js' %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script src="{% static 'js/app.js' %}"></script>
+
+
+</body>
+
+</html>

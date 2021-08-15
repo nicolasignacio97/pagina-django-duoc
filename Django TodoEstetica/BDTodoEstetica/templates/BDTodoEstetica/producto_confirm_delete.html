@@ -1,0 +1,17 @@
+{% load static %}{% load static %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+{% include 'BDTodoEstetica/includes/menu.html'%}
+<section class="formulario">
+    <form method="post">
+    {% csrf_token %}
+        <div class="borar"
+            <p> Seguro quieres borrar El producto: "{{ object }}"?</p>
+            <img src="{{object.Imagen.url}}" alt="texto entrada"><br>
+        </div>
+        <div class="btnDecision">
+            <input class="btn btn-danger botonConf"  type="submit" value="Confirmar">
+            <a href="{% url 'inicio:detail' object.id%}" class="btn btn-secondary botonConf">Rechazar</a>
+        </div>
+    </form>
+</section>

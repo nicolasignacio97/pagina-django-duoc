@@ -1,0 +1,19 @@
+{% load static %}{% load static %}
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+{% include 'BDTodoEstetica/includes/menu.html'%}
+
+
+    {% if 'ok' in request.GET%}
+        <div class="mensaje">
+            <p style="color:green"> Producto Actualizado correctamente</p>
+            <a class="btn btn-secondary" href="{% url 'inicio:detail' object.id%}">Ver Cambios</a> 
+        </div>
+    {% endif %}
+  <section class="formulario">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary btn-lg btn-block" value="Actualizar" />
+    </form>
+</section>

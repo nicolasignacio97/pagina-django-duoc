@@ -1,0 +1,37 @@
+{% extends "BDTodoEstetica/index.html" %}
+{% load static %}{% load static %} {%include 'BDTodoEstetica/includes/menu.html'%}
+<!--Titulo-->
+{% block title %}Detalle{%endblock title %}}
+{% block slyder %}{% endblock slyder %}
+{% block container %}{% endblock  %}
+<!--Contenido-->
+{% block content %}
+<main class="concuchara">
+<div class="card text-center">
+  <div class="card-header">
+    {{object.NombreProducto}}
+  </div>
+  <div class="row center-xs">
+    <div class="col-md-3">
+        <img src="{{object.Imagen.url}}" class="card-img" alt="Imagen producto">
+    </div>
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">${{object.Precio}}</h2>
+    <h5 class="card-title">{{object.Marca}}</h5>
+    <p class="card-text">{{object.Descripcion}}</p>
+    <span>{{object.NombreTienda}}</span>
+    <br>
+    {% if request.user.is_staff %}
+    <a href="{% url 'inicio:update' object.id%}" class="btn btn-primary">Editar Producto</a>
+    <a href="{% url 'inicio:delete' object.id%}" class="btn btn-primary">Borrar Producto</a>
+    {% else %}
+    <a href="#" class="btn btn-primary">Comprar</a>
+    {%endif%}
+  </div>
+  <div class="card-footer text-muted">
+    {{object.Creacion}}
+  </div>
+</div>
+</main>
+{% endblock content %}}

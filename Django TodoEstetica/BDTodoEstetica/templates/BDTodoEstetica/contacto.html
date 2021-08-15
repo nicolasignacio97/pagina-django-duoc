@@ -1,0 +1,110 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo Estetica - Contacto </title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,600,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oleo+Script|Oswald|PT+Sans|Roboto&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/flexboxgrid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <header id="header">
+        <nav class="menu">
+            <div class="logo">
+                <a href="{% url 'inicio:inicio'%}"><img src="/static/img/Header/Logo_Oficial_3.png" alt="Imagen Logo"></a>
+                <a href="#" class="btn-menu" id="btn-menu"><i class="icono fa fa-bars" aria-hidden="true"></i></a>
+            </div>
+
+            <div class="enlaces" id="enlaces">
+                <a href="#"><i class="fa fa-hand-pointer-o" aria-hidden="true"></i>Tiendas</a>
+                <a href="{% url 'signup'%}"><i class="fa fa-user-plus" aria-hidden="true"></i>Registrarse</a>
+                <a href="#"><i class="fa fa-sign-in" aria-hidden="true"></i>Iniciar Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="contacto">
+        <div>
+            <h2>¡Inscribe tu tienda!</h2>
+            <p>Déjanos tus datos y te contactaremos a la brevedad</p>
+        </div>
+    </section>
+
+    <main class="contenedor clearfix">
+        <form method="POST" class="campos bloque">
+            <fieldset>
+                <legend>Información personal</legend>
+                <label for="nombre">* Nombre:</label>
+                <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+                <span class="help-block"></span>
+
+                <label for="mail">* E-Mail:</label>
+                <input type="text" id="mail" placeholder="ejemplo@mail.cl">
+
+                <label for="celular">* Celular:</label>
+                <input type="text" id="celular" placeholder="Ejemplo: (+56) 9 00000000">
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escriba su mensaje"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend>Información de la tienda</legend>
+                <label for="tienda">* Nombre de la tienda:</label>
+                <input type="text" id="tienda" placeholder="Ingresa la tienda">
+
+                <label for="rutTienda">* Rut:</label>
+                <input type="text" id="rutTienda" placeholder="Ejemplo: 83274300-3">
+
+                <label for="tipoTienda">* Tipo de Tienda:</label>
+                <select id="tipoTienda">
+                    <option value="" disabled selected>--Seleccione--</option>
+                    <option value="pyme">Pyme</option>
+                    <option value="granTienda">Gran tienda</option>
+                </select>
+
+                <label for="archivo">Subir Documento:</label>
+                <input type="file" name="archivo" id="archivo">
+            </fieldset>
+        </form>
+        <input type="submit" id="btnValidar" value="Enviar" onclick="validarFormulario()" class="botoncete boton-morado">
+    </main>
+
+    <footer class="site-footer seccion">
+        <div class="contenedor contenedor-footer">
+            <nav class="nav-footer">
+                <a href="#">Tiendas |</a>
+                <a href="#"> Blog |</a>
+                <a href="contacto.html"> Postula aquí</a>
+            </nav>
+
+            <nav>
+                <a href="#">Facebook |</a>
+                <a href="#">Instagram |</a>
+                <a href="#">Twitter</a>
+            </nav>
+
+            <p>Todos los Derechos Reservados 2019 &copy; </p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{% static 'js/headroom.min.js' %}"></script>
+    <script src="{% static 'js/menu.js' %}"></script>
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>
